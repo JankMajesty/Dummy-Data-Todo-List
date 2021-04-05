@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dummy Data</title>
-  <link rel="stylesheet" href="./styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Dummy Data To-do List</title>
 </head>
+
 <body>
-  This is Dummy Data page
-  
-  <button onclick="fetchTodos()">Fetch Todos</button>
-  <button onclick="logTodos()">Log Todos</button>
-  <button onclick="populateTodos()">Populate Todos</button>
-  <ol id="todo-list">
-    <!-- LIs will go here -->
-  </ol>
-  <script src="./app.js"></script>
+
+    <div class="list-container">
+
+        <div class="button-container">
+            <button onclick="fetchTodos()">Fetch Todos</button>
+            <button onclick="logTodos()">Log Todos</button>
+            <button onclick="populateTodos(arrayOfTodos)">Populate Todos</button>
+        </div>
+
+        <div class="filter-container">
+            <div action="">
+                <label for="userID">Filter by userID:</label>
+                <input type="number" min="0" max="10" name="userID" id="userID" placeholder="ID#" onfocus="this.placeholder = ''"/>
+                <button onclick="idFilter()">Go</button>
+            </div>
+            <button onclick="isDone(true)" id="complete">Show All Complete</button>
+            <button onclick="isDone(false)" id="incomplete">Show All Incomplete</button>
+        </div>
+
+        <div class="todo-list">
+            <ol id="todo-list">
+                <!-- LIs will go here -->
+            </ol>
+        </div>
+
+    </div>
+
+
+    <script src="./app.js"></script>
 </body>
+
 </html>
